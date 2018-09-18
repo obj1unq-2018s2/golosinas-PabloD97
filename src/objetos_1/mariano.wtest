@@ -19,17 +19,39 @@ describe "tests de mariano" {
 	}
 	
 	test "probar golosinas" {
-		/* habilitar las lineas anuladas cuando se complete la definicion 
-		 * de las golosinas
-		 */
-//		assert.equals(100, chocolatin.peso())
-//		assert.equals(5, caramelo.peso())
+		
+		assert.equals(100, chocolatin.peso())
+		assert.equals(5, caramelo.peso())
 		assert.equals(15, bombon.peso())
 		mariano.probarGolosinas()
-//		assert.equals(98, chocolatin.peso())
-//		assert.equals(4, caramelo.peso())
+		assert.equals(98, chocolatin.peso())
+		assert.equals(4, caramelo.peso())
 		assert.equals(11, bombon.peso())
 	}
 	
+	test "test hay golosinas sin TACC"{
+		assert.that( mariano.hayGolosinasSinTACC() )
+	}
+	
+	test "test precios cuidados"{
+		assert.that( mariano.preciosCuidados())
+	}
+	
+	test "test sacar una golosina"{
+		mariano.desechar(caramelo)
+		assert.equals(2, mariano.golosinas().size())
+	}
+	
+	test "test golosina De Sabor"{
+		assert.equals(caramelo, mariano.golosinaDeSabor("frutilla"))
+	}
+	
+	test "sabores de golosinas"{
+		assert.equals(["chocolate","frutilla"], mariano.sabores())
+	}
+	
+	test "test golosinas faltantes"{
+		assert.equals(#{alfajor,chupetin}, mariano.golosinasFaltantes( #{alfajor, bombon, chocolatin, chupetin}))
+	}
 }
 
