@@ -5,7 +5,10 @@ object mariano {
 	var bolsaDeGolosinas= []
 	var property saboresDeGolosinas=[]
 	
-	method comprar(golosina) { bolsaDeGolosinas.add(golosina) }
+	method comprar(golosina) { 
+		bolsaDeGolosinas.add(golosina)
+		saboresDeGolosinas.add(golosina.gusto())
+	}
 	
 	method desechar(unaGolosina){ bolsaDeGolosinas.remove(unaGolosina) }
 	
@@ -35,7 +38,7 @@ object mariano {
 	}
 	
 	method gustosFaltantes(gustosDeseados){
-		return gustosDeseados.intersection(saboresDeGolosinas.asSet())
+		return gustosDeseados.difference(saboresDeGolosinas.asSet())
 	}
 }
 

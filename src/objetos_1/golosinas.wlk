@@ -71,14 +71,13 @@ object golosinaBaniada {
 	
 	method baniaA(unaGolosina) { golosinaInterior = unaGolosina }
 	method precio() = golosinaInterior.precio() + 2 
-	method peso()= golosinaInterior.peso() + 4
+	method peso()= golosinaInterior.peso() + pesoBanio
 	method mordisco() {
 		golosinaInterior.mordisco()
 		if (pesoBanio > 0) { pesoBanio -= 2 }
-		// otra forma de hacer la cuenta: pesoBanio = (pesoBanio - 2).max(0) 
 	}	
 	method gusto() { return golosinaInterior.gusto() }
-	method libreGluten() { golosinaInterior.libreGluten() }	
+	method libreGluten() {return golosinaInterior.libreGluten() }	
 }
 
 object tuttifrutti {

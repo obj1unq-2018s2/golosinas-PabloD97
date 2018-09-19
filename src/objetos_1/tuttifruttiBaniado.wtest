@@ -1,0 +1,32 @@
+import golosinas.*
+
+describe "test de tuttifrutti baniado"{
+
+	test "peso inicial"{
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(9, golosinaBaniada.peso())
+	}
+	
+	test "precio"{
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals(9, golosinaBaniada.precio())
+	}
+
+	test "gusto"{
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.equals("frutilla", golosinaBaniada.gusto())
+	}
+	
+	test "mordisco"{
+		golosinaBaniada.baniaA(tuttifrutti)
+		golosinaBaniada.mordisco()
+		assert.equals("chocolate", golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals("naranja", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten"{
+		golosinaBaniada.baniaA(tuttifrutti)
+		assert.that(golosinaBaniada.libreGluten())
+	}
+}
