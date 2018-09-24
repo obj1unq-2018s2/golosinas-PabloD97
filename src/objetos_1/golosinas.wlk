@@ -1,4 +1,4 @@
-object bombon {
+class Bombon {
 	var peso = 15
 	
 	method precio() { return 5 }
@@ -8,7 +8,7 @@ object bombon {
 	method libreGluten() { return true }
 }
 
-object alfajor {
+class Alfajor {
 	var peso= 300
 	
 	method precio()= 12
@@ -19,7 +19,7 @@ object alfajor {
 
 }
 
-object caramelo {
+class Caramelo {
 	var peso= 5
 	
 	method precio()= 1
@@ -28,8 +28,7 @@ object caramelo {
 	method libreGluten()= true
 	method mordisco(){ peso -= 1 }
 }
-
-object chupetin {
+class Chupetin {
 	var peso= 7
 	
 	method precio()= 2
@@ -39,7 +38,7 @@ object chupetin {
 	method mordisco(){ if(peso > 2) peso -= 0.1* peso }
 }
 
-object oblea {
+class Oblea {
 	var peso= 250
 	
 	method precio()= 5
@@ -50,7 +49,7 @@ object oblea {
 					   else peso -= 0.25* peso }
 }
 
-object chocolatin {
+class Chocolatin {
 	var pesoInicial
 	var pesoActual = pesoInicial
 	
@@ -65,7 +64,7 @@ object chocolatin {
 	method gusto()= "chocolate"
 }
 
-object golosinaBaniada {
+class GolosinaBaniada {
 	var golosinaInterior
 	var pesoBanio = 4
 	
@@ -80,7 +79,7 @@ object golosinaBaniada {
 	method libreGluten() {return golosinaInterior.libreGluten() }	
 }
 
-object tuttifrutti {
+class Tuttifrutti {
 	var peso= 5
 	var property libreGluten= true 
 	var property gusto= "frutilla"
